@@ -35,8 +35,9 @@ if __name__ == '__main__':
             for tag in tags:
                 text = render_dockerfile(pkg, system, tag)
                 if text:
-                    if not os.path.exists(system):
-                        os.mkdir(system)
+                    path = '%s/%s' % (system, tag)
+                    if not os.path.exists(path):
+                        os.makedirs(path)
 
-                    with io.open('%s/Dockerfile.%s%s' % (system, system, tag), 'w') as f:
+                    with io.open('%s/Dockerfile' % path, 'w') as f:
                         f.write(text)
