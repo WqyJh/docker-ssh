@@ -7,6 +7,8 @@ apt:
     - latest
     - 9
     - 8
+  nvidia/cuda:
+    - latest
 
 yum:
   centos:
