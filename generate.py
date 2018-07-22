@@ -1,0 +1,42 @@
+# Generate the Dockerfiles
+
+import os
+import io
+import yaml
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+env = Environment(
+    loader=FileSystemLoader(os.path.curdir),
+    autoescape=False
+)
+
+
+def parse_config(config_file):
+    with io.open(config_file) as f:
+        config = yaml.load(f.read())
+        return config
+
+
+def render_dockerfile(pkgmgr, system, version):
+    template = env.get_template('template/template.%s' % pkgmgr)
+
+    result = template.render({
+        'os': system,
+        'tag': version,
+    })
+    return result
+
+
+if __name__ == '__main__':
+    cfg = parse_config('config.yml')
+
+    for pkg, system_tag in cfg.items():
+        for system, tags in system_tag.items():
+            for tag in tags:
+                text = render_dockerfile(pkg, system, tag)
+                if text:
+                    if not os.path.exists(system):
+                        os.mkdir(system)
+
+                    with io.open('%s/Dockerfile.%s%s' % (system, system, tag), 'w') as f:
+                        f.write(text)

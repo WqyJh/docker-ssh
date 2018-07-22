@@ -1,0 +1,13 @@
+apt:
+  ubuntu:
+    - 16.04
+    - 14.04
+  debian:
+    - 9
+    - 8
+
+yum:
+  centos:
+    - 7
+    - 6
+
