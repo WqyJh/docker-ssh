@@ -1,13 +1,20 @@
 apt:
   ubuntu:
+    - latest
     - 16.04
     - 14.04
   debian:
+    - latest
     - 9
     - 8
 
 yum:
   centos:
+    - latest
     - 7
     - 6
+
+apk:
+  alpine:
+    - latest
 
