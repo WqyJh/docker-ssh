@@ -14,7 +14,7 @@ yum:
     - 7
     - 6
 
-apk:
+alpine:
   alpine:
     - latest
 

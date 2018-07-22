@@ -8,7 +8,7 @@ RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_confi
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/^HostKey/#HostKey/g' /etc/ssh/sshd_config
 
-RUN rm /etc/ssh/ssh_host_*_key && \
+RUN rm -f /etc/ssh/ssh_host_*_key && \
     ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -P '' && \
     ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -P '' && \
     ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -P '' && \

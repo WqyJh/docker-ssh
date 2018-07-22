@@ -1,4 +1,4 @@
-FROM {{ os }}:{{ tag }}
+FROM centos:latest
 
 RUN yum install -y openssh-server && \
     yum clean all
