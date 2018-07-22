@@ -22,3 +22,13 @@ docker inspect <container name>
 # password is 'root'
 ssh root@<container ip>
 ```
+
+## Supported Containers
+
+- ubuntu16.04
+- ubuntu14.04
+- debian9
+- debian8
+- centos7
+- centos6
+- alpine
