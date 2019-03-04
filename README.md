@@ -23,6 +23,12 @@ docker inspect <container name>
 ssh root@<container ip>
 ```
 
+## Generate
+
+```bash
+python generate.py
+```
+
 ## Supported Containers
 
 - ubuntu16.04
@@ -32,3 +38,13 @@ ssh root@<container ip>
 - centos7
 - centos6
 - alpine
+
+nvidia/cuda:
+- 10.0-runtime-ubuntu18.04
+- 10.0-cudnn7-runtime-ubuntu18.04
+- 9.2-runtime-ubuntu18.04
+- 9.2-cudnn7-runtime-ubuntu18.04
+- 10.0-runtime-ubuntu16.04
+- 10.0-cudnn7-runtime-ubuntu16.04
+- 9.2-runtime-ubuntu16.04
+- 9.2-cudnn7-runtime-ubuntu16.04
