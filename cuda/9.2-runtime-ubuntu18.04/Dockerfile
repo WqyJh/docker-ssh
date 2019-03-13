@@ -1,7 +1,10 @@
-FROM nvidia/cuda:9.2-cudnn7-runtime-ubuntu18.04
+FROM cuda:9.2-runtime-ubuntu18.04
 
 RUN apt-get update && \
-    apt-get install -y openssh-server && \
+    apt-get install -y openssh-server python python-pip python3 python3-pip htop tmux && \
+    python3 -m pip install --upgrade pip && python -m pip install --upgrade pip && \
+    pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
+    pip3 install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
     rm -rf /var/lib/apt/lists/*
 
 RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
