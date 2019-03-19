@@ -42,9 +42,13 @@ python generate.py
 nvidia/cuda:
 - 10.0-runtime-ubuntu18.04
 - 10.0-cudnn7-runtime-ubuntu18.04
+- 10.0-devel-ubuntu18.04
+- 10.0-cudnn7-devel-ubuntu18.04
 - 9.2-runtime-ubuntu18.04
 - 9.2-cudnn7-runtime-ubuntu18.04
 - 10.0-runtime-ubuntu16.04
 - 10.0-cudnn7-runtime-ubuntu16.04
+- 10.0-devel-ubuntu16.04
+- 10.0-cudnn7-devel-ubuntu16.04
 - 9.2-runtime-ubuntu16.04
 - 9.2-cudnn7-runtime-ubuntu16.04
