@@ -9,6 +9,14 @@ that can run background forever, it will just run and exit instantly.
 To solve this problem, we can run a sshd service as its entry point
 then we can connect to it by ssh.
 
+## Requirements
+
+Python: >= 3
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Usage
 
 ```bash
