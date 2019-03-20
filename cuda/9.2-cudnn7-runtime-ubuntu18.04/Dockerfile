@@ -1,7 +1,7 @@
 FROM nvidia/cuda:9.2-cudnn7-runtime-ubuntu18.04
 
 RUN apt-get update && \
-    apt-get install -y openssh-server python python-pip python3 python3-pip htop tmux && \
+    apt-get install -y openssh-server python python-pip python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
     python3 -m pip install --upgrade pip && python -m pip install --upgrade pip && \
     pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
     pip3 install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
