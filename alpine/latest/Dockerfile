@@ -12,7 +12,9 @@ ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -P "" \n\
 exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
-    apk add --no-cache openssh-server dumb-init && \
+    apk add --no-cache openssh-server && \
+    wget -O /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 && \
+    chmod +x /usr/bin/dumb-init && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/^HostKey/#HostKey/g' /etc/ssh/sshd_config && \

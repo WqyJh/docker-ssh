@@ -19,6 +19,8 @@ exec /usr/sbin/sshd -D\n' \
     pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
     pip3 install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
     rm -rf /var/lib/apt/lists/* && \
+    wget -O /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 && \
+    chmod +x /usr/bin/dumb-init && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/^HostKey/#HostKey/g' /etc/ssh/sshd_config && \
