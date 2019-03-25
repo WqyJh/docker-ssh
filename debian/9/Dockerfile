@@ -13,7 +13,7 @@ exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
     apt-get update && \
-    apt-get install -y openssh-server && \
+    apt-get install -y openssh-server wget && \
     rm -rf /var/lib/apt/lists/* && \
     wget -O /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 && \
     chmod +x /usr/bin/dumb-init && \

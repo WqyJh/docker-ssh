@@ -13,7 +13,7 @@ ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -P "" \n\
 exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
-    yum install -y openssh-server && \
+    yum install -y openssh-server wget && \
     yum clean all && \
     wget -O /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 && \
     chmod +x /usr/bin/dumb-init && \
