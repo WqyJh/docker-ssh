@@ -48,6 +48,8 @@ nvidia/cuda:
 - cuda10.0-cudnn7-devel-ubuntu16.04
 - cuda9.2-runtime-ubuntu16.04
 - cuda9.2-cudnn7-runtime-ubuntu16.04
+- 9.2-cudnn7-devel-ubuntu16.04
+- 9.0-cudnn7-devel-ubuntu16.04
 
 
 ## Contributing
