@@ -13,7 +13,7 @@ env = Environment(
 
 def parse_config(config_file):
     with io.open(config_file) as f:
-        config = yaml.load(f.read())
+        config = yaml.load(f, Loader=yaml.SafeLoader)
         return config
 
 
