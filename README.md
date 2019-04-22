@@ -14,7 +14,7 @@ then we can connect to it by ssh.
 
 ```bash
 # Run container background
-docker run -itd wqyjh/docker-ssh:ubuntu16.04
+docker run --init -itd wqyjh/docker-ssh:ubuntu16.04
 
 # Inspect the container IP
 docker inspect <container name>
