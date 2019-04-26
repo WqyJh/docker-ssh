@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-devel-ubuntu18.04
+FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu16.04
 
 
 RUN echo -e '#!/bin/sh\n\
