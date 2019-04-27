@@ -39,8 +39,6 @@ nvidia/cuda:
 - 10.1-cudnn7-devel-ubuntu18.04
 - 10.0-cudnn7-devel-ubuntu18.04
 - 9.2-cudnn7-devel-ubuntu18.04
-- 9.1-cudnn7-devel-ubuntu18.04
-- 9.0-cudnn7-devel-ubuntu18.04
 - 10.1-cudnn7-devel-ubuntu16.04
 - 10.0-cudnn7-devel-ubuntu16.04
 - 9.2-cudnn7-devel-ubuntu16.04
