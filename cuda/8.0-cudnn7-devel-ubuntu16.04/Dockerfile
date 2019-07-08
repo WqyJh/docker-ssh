@@ -3,11 +3,13 @@ FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu16.04
 RUN printf '#!/bin/sh\n\
 \n\
 # Clear existing host keys and generate new ones.\n\
+if [ ! -f /root/.ssh/known_hosts ]; then\n\
 rm -f /etc/ssh/ssh_host_*_key &&\n\
 ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -P "" &&\n\
 ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -P "" &&\n\
 ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -P "" &&\n\
 ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -P "" \n\
+fi\n\
 \n\
 exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
