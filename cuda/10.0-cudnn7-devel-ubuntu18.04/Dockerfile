@@ -1,7 +1,6 @@
 FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu18.04
 
-
-RUN echo -e '#!/bin/sh\n\
+RUN printf '#!/bin/sh\n\
 \n\
 # Clear existing host keys and generate new ones.\n\
 rm -f /etc/ssh/ssh_host_*_key &&\n\
