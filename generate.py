@@ -3,7 +3,7 @@
 import os
 import io
 import yaml
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader
 
 env = Environment(
     loader=FileSystemLoader(os.path.curdir),
