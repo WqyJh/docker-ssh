@@ -13,7 +13,7 @@ printf "#!/bin/sh\n\nexec /usr/sbin/sshd -D\n" > /entry-point.sh\n\
 exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
-    yum install -y openssh-server wget && \
+    yum install -y openssh-server openssh-clients wget && \
     yum clean all && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \

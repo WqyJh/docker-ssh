@@ -14,7 +14,7 @@ exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
     apt-get update && \
-    apt-get install -y sudo vim openssh-server wget python python-pip python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
+    apt-get install -y sudo vim openssh-server openssh-client wget python python-pip python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
     python3 -m pip install --upgrade pip && python -m pip install --upgrade pip && \
     pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
     pip3 install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
