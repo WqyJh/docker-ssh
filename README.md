@@ -27,10 +27,13 @@ ssh root@<container ip>
 
 ## Supported Containers
 
+- ubuntu18.04
 - ubuntu16.04
 - ubuntu14.04
+- debian10
 - debian9
 - debian8
+- centos8
 - centos7
 - centos6
 - alpine

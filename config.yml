@@ -25,6 +25,7 @@ nvidia:
 yum:
   centos:
     - latest
+    - 8
     - 7
     - 6
 
