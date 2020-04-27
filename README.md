@@ -14,19 +14,17 @@ then we can connect to it by ssh.
 
 ```bash
 # Run container background
-docker run --init -itd wqyjh/docker-ssh:ubuntu16.04
-
-# Inspect the container IP
-docker inspect <container name>
+docker run --init -d -p 2222:22 wqyjh/docker-ssh:ubuntu16.04
 
 # Connect with ssh
 # password is 'root'
-ssh root@<container ip>
+ssh root@127.0.0.1 -p 2222
 ```
 
 
 ## Supported Containers
 
+- ubuntu20.04
 - ubuntu18.04
 - ubuntu16.04
 - ubuntu14.04
