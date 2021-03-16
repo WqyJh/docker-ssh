@@ -14,7 +14,7 @@ exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
     apt-get update && \
-    apt-get install -y openssh-server openssh-client wget && \
+    apt-get install -y openssh-server openssh-client wget vim && \
     rm -rf /var/lib/apt/lists/* && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
