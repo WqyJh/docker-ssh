@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.0-devel-ubuntu20.04
+FROM nvidia/cuda:11.2.1-cudnn8-devel-ubuntu20.04
 
 RUN printf '#!/bin/sh\n\
 \n\
