@@ -1,5 +1,7 @@
 FROM debian:8
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN printf '#!/bin/sh\n\
 \n\
 # Clear existing host keys and generate new ones.\n\

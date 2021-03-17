@@ -1,5 +1,7 @@
 FROM ubuntu:16.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN printf '#!/bin/sh\n\
 \n\
 # Clear existing host keys and generate new ones.\n\
