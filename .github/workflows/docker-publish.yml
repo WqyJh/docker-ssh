@@ -32,9 +32,7 @@ jobs:
         include:
           - release: alpine
             tag: latest
-          - release: centos
-            tag: latest
-          - release: centos
+          - release: rockylinux
             tag: 8
           - release: centos
             tag: 7

@@ -27,9 +27,9 @@ nvidia:
 
 yum:
   centos:
-    - latest
-    - 8
     - 7
+  rockylinux:
+    - 8
 
 alpine:
   alpine:
