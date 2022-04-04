@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-devel-ubuntu16.04
+FROM debian:11
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -14,12 +14,9 @@ ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -P "" \n\
 printf "#!/bin/sh\n\nexec /usr/sbin/sshd -D\n" > /entry-point.sh\n\
 exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
-    set -ex && \
     chmod +x /entry-point.sh && \
     apt-get update && \
-    apt-get install -y sudo vim openssh-server openssh-client wget python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
-    python3 -m pip install --upgrade pip && \
-    python3 -m pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
+    apt-get install -y openssh-server openssh-client wget vim && \
     rm -rf /var/lib/apt/lists/* && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \

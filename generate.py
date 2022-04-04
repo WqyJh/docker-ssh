@@ -3,6 +3,7 @@
 import os
 import io
 import yaml
+import shutil
 from jinja2 import Environment, FileSystemLoader
 
 env = Environment(
@@ -32,6 +33,7 @@ if __name__ == '__main__':
 
     for pkg, system_tag in cfg.items():
         for system, tags in system_tag.items():
+            shutil.rmtree(system, ignore_errors=True)
             for tag in tags:
                 text = render_dockerfile(pkg, system, tag)
                 if text:

@@ -14,7 +14,7 @@ then we can connect to it by ssh.
 
 ```bash
 # Run container background
-docker run --init -d -p 2222:22 wqyjh/docker-ssh:ubuntu16.04
+docker run --init -d -p 2222:22 wqyjh/docker-ssh:ubuntu20.04
 
 # Connect with ssh
 # password is 'root'
@@ -26,31 +26,27 @@ ssh root@127.0.0.1 -p 2222
 
 - ubuntu20.04
 - ubuntu18.04
-- ubuntu16.04
-- ubuntu14.04
+- debian11
 - debian10
 - debian9
-- debian8
 - centos8
 - centos7
-- centos6
 - alpine
 
 nvidia/cuda:
-- 11.0-devel-ubuntu20.04
-- 11.0-cudnn8-devel-ubuntu20.04-rc
-- 10.2-cudnn7-devel-ubuntu18.04
+- 11.6.0-devel-ubuntu20.04
+- 11.2.1-cudnn8-devel-ubuntu20.04
+- 11.1.1-cudnn8-devel-ubuntu20.04
+- 11.0.3-cudnn8-devel-ubuntu20.04
+- 11.2.1-cudnn8-devel-ubuntu18.04
+- 11.1.1-cudnn8-devel-ubuntu18.04
+- 11.0.3-cudnn8-devel-ubuntu18.04
 - 10.2-cudnn8-devel-ubuntu18.04
+- 10.2-cudnn7-devel-ubuntu18.04
 - 10.1-cudnn8-devel-ubuntu18.04
 - 10.1-cudnn7-devel-ubuntu18.04
 - 10.0-cudnn7-devel-ubuntu18.04
 - 9.2-cudnn7-devel-ubuntu18.04
-- 10.1-cudnn7-devel-ubuntu16.04
-- 10.0-cudnn7-devel-ubuntu16.04
-- 9.2-cudnn7-devel-ubuntu16.04
-- 9.1-cudnn7-devel-ubuntu16.04
-- 9.0-cudnn7-devel-ubuntu16.04
-- 8.0-cudnn7-devel-ubuntu16.04
 
 
 ## Contributing

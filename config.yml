@@ -3,43 +3,34 @@ apt:
     - latest
     - 20.04
     - 18.04
-    - 16.04
-    - 14.04
   debian:
     - latest
+    - 11
     - 10
     - 9
-    - 8
 
 nvidia:
   cuda:
+    - 11.6.0-devel-ubuntu20.04
     - 11.2.1-cudnn8-devel-ubuntu20.04
     - 11.1.1-cudnn8-devel-ubuntu20.04
     - 11.0.3-cudnn8-devel-ubuntu20.04
     - 11.2.1-cudnn8-devel-ubuntu18.04
     - 11.1.1-cudnn8-devel-ubuntu18.04
     - 11.0.3-cudnn8-devel-ubuntu18.04
-    - 10.2-cudnn7-devel-ubuntu18.04
     - 10.2-cudnn8-devel-ubuntu18.04
+    - 10.2-cudnn7-devel-ubuntu18.04
     - 10.1-cudnn8-devel-ubuntu18.04
     - 10.1-cudnn7-devel-ubuntu18.04
     - 10.0-cudnn7-devel-ubuntu18.04
     - 9.2-cudnn7-devel-ubuntu18.04
-    - 10.1-cudnn7-devel-ubuntu16.04
-    - 10.0-cudnn7-devel-ubuntu16.04
-    - 9.2-cudnn7-devel-ubuntu16.04
-    - 9.1-cudnn7-devel-ubuntu16.04
-    - 9.0-cudnn7-devel-ubuntu16.04
-    - 8.0-cudnn7-devel-ubuntu16.04
 
 yum:
   centos:
     - latest
     - 8
     - 7
-    - 6
 
 alpine:
   alpine:
     - latest
-
