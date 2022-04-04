@@ -30,6 +30,8 @@ yum:
     - 7
   rockylinux:
     - 8
+  almalinux:
+    - 8
 
 alpine:
   alpine:

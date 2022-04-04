@@ -29,6 +29,7 @@ ssh root@127.0.0.1 -p 2222
 - debian11
 - debian10
 - debian9
+- almalinux8
 - rockylinux8
 - centos7
 - alpine
