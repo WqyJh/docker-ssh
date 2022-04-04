@@ -17,50 +17,8 @@ env:
   DOCKER_HUB_USER: wqyjh
   IMAGE_NAME: wqyjh/docker-ssh
 
-strategy:
-  matrix:
-    include:
-      - release: alpine
-        tag: latest
-      - release: centos
-        tag: latest
-      - release: centos
-        tag: 8
-      - release: centos
-        tag: 7
-      - release: ubuntu
-        tag: latest
-      - release: ubuntu
-        tag: 20.04
-      - release: ubuntu
-        tag: 18.04
-      - release: debian
-        tag: latest
-      - release: debian
-        tag: 11
-      - release: debian
-        tag: 10
-      - release: debian
-        tag: 9
-    release: [ cuda ]
-    tag: 
-      - 11.6.0-devel-ubuntu20.04
-      - 11.2.1-cudnn8-devel-ubuntu20.04
-      - 11.1.1-cudnn8-devel-ubuntu20.04
-      - 11.0.3-cudnn8-devel-ubuntu20.04
-      - 11.2.1-cudnn8-devel-ubuntu18.04
-      - 11.1.1-cudnn8-devel-ubuntu18.04
-      - 11.0.3-cudnn8-devel-ubuntu18.04
-      - 10.2-cudnn8-devel-ubuntu18.04
-      - 10.2-cudnn7-devel-ubuntu18.04
-      - 10.1-cudnn8-devel-ubuntu18.04
-      - 10.1-cudnn7-devel-ubuntu18.04
-      - 10.0-cudnn7-devel-ubuntu18.04
-      - 9.2-cudnn7-devel-ubuntu18.04
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -68,6 +26,47 @@ jobs:
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
       id-token: write
+
+    strategy:
+      matrix:
+        include:
+          - release: alpine
+            tag: latest
+          - release: centos
+            tag: latest
+          - release: centos
+            tag: 8
+          - release: centos
+            tag: 7
+          - release: ubuntu
+            tag: latest
+          - release: ubuntu
+            tag: 20.04
+          - release: ubuntu
+            tag: 18.04
+          - release: debian
+            tag: latest
+          - release: debian
+            tag: 11
+          - release: debian
+            tag: 10
+          - release: debian
+            tag: 9
+        release: [ cuda ]
+        tag: 
+          - 11.6.0-devel-ubuntu20.04
+          - 11.2.1-cudnn8-devel-ubuntu20.04
+          - 11.1.1-cudnn8-devel-ubuntu20.04
+          - 11.0.3-cudnn8-devel-ubuntu20.04
+          - 11.2.1-cudnn8-devel-ubuntu18.04
+          - 11.1.1-cudnn8-devel-ubuntu18.04
+          - 11.0.3-cudnn8-devel-ubuntu18.04
+          - 10.2-cudnn8-devel-ubuntu18.04
+          - 10.2-cudnn7-devel-ubuntu18.04
+          - 10.1-cudnn8-devel-ubuntu18.04
+          - 10.1-cudnn7-devel-ubuntu18.04
+          - 10.0-cudnn7-devel-ubuntu18.04
+          - 9.2-cudnn7-devel-ubuntu18.04
 
     steps:
       - name: Checkout repository
