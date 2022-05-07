@@ -16,6 +16,8 @@ exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     set -ex && \
     chmod +x /entry-point.sh && \
+    apt-key del 7fa2af80 && \
+    apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/3bf863cc.pub && \
     apt-get update && \
     apt-get install -y sudo vim openssh-server openssh-client wget python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
     python3 -m pip install --upgrade pip && \
