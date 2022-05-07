@@ -36,17 +36,10 @@ ssh root@127.0.0.1 -p 2222
 
 nvidia/cuda:
 - 11.6.0-devel-ubuntu20.04
-- 11.2.1-cudnn8-devel-ubuntu20.04
-- 11.1.1-cudnn8-devel-ubuntu20.04
-- 11.0.3-cudnn8-devel-ubuntu20.04
-- 11.2.1-cudnn8-devel-ubuntu18.04
-- 11.1.1-cudnn8-devel-ubuntu18.04
-- 11.0.3-cudnn8-devel-ubuntu18.04
+- 11.6.0-cudnn8-devel-ubuntu20.04
+- 11.6.0-cudnn8-devel-ubuntu18.04
 - 10.2-cudnn8-devel-ubuntu18.04
 - 10.2-cudnn7-devel-ubuntu18.04
-- 10.1-cudnn8-devel-ubuntu18.04
-- 10.1-cudnn7-devel-ubuntu18.04
-- 10.0-cudnn7-devel-ubuntu18.04
 - 9.2-cudnn7-devel-ubuntu18.04
 
 
