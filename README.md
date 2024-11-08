@@ -24,23 +24,19 @@ ssh root@127.0.0.1 -p 2222
 
 ## Supported Containers
 
-- ubuntu20.04
-- ubuntu18.04
+- ubuntu24.04
+- ubuntu22.04
+- debian12
 - debian11
-- debian10
-- debian9
-- almalinux8
+- rockylinux9
 - rockylinux8
-- centos7
+- almalinux9
+- almalinux8
 - alpine
 
 nvidia/cuda:
-- 11.6.0-devel-ubuntu20.04
-- 11.6.0-cudnn8-devel-ubuntu20.04
-- 11.6.0-cudnn8-devel-ubuntu18.04
-- 10.2-cudnn8-devel-ubuntu18.04
-- 10.2-cudnn7-devel-ubuntu18.04
-- 9.2-cudnn7-devel-ubuntu18.04
+- 12.6.2-devel-ubuntu24.04
+- 12.6.2-devel-ubuntu22.04
 
 
 ## Contributing
