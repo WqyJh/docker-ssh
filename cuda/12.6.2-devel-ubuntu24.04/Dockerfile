@@ -19,7 +19,7 @@ exec /usr/sbin/sshd -D\n' \
     apt-get update && \
     apt-get install -y sudo vim openssh-server openssh-client wget python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
     python3 -m pip install --upgrade pip && \
-    python3 -m pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python sklearn jieba ipython jupyter && \
+    python3 -m pip install --no-cache-dir torch torchvision tensorflow-gpu scipy opencv-python ipython jupyter && \
     rm -rf /var/lib/apt/lists/* && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
