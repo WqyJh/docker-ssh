@@ -4,3 +4,5 @@ temp/
 .vscode/
 .history/
 venv/
+.venv/
+__pycache__/

@@ -1,6 +1,4 @@
-FROM debian:9
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM almalinux:9
 
 RUN printf '#!/bin/sh\n\
 \n\
@@ -15,12 +13,15 @@ printf "#!/bin/sh\n\nexec /usr/sbin/sshd -D\n" > /entry-point.sh\n\
 exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     chmod +x /entry-point.sh && \
-    apt-get update && \
-    apt-get install -y openssh-server openssh-client wget vim && \
-    rm -rf /var/lib/apt/lists/* && \
+    yum install -y openssh-server openssh-clients wget vim && \
+    yum clean all && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/^HostKey/#HostKey/g' /etc/ssh/sshd_config && \
+    sed -ri 's/^#(HostKey \/etc\/ssh\/ssh_host_rsa_key)/\1/' /etc/ssh/sshd_config && \
+    sed -ri 's/^#(HostKey \/etc\/ssh\/ssh_host_dsa_key)/\1/' /etc/ssh/sshd_config && \
+    sed -ri 's/^#(HostKey \/etc\/ssh\/ssh_host_ecdsa_key)/\1/' /etc/ssh/sshd_config && \
+    sed -ri 's/^#(HostKey \/etc\/ssh\/ssh_host_ed25519_key)/\1/' /etc/ssh/sshd_config && \
     echo "root:root" | chpasswd  && \
     echo "root   ALL=(ALL)       ALL" >> /etc/sudoers && \
     mkdir -p /root/.ssh && \

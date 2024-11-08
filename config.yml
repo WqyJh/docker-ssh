@@ -1,30 +1,25 @@
 apt:
   ubuntu:
     - latest
-    - 20.04
-    - 18.04
+    - 24.04
+    - 22.04
   debian:
     - latest
+    - 12
     - 11
-    - 10
-    - 9
 
 nvidia:
   cuda:
-    - 11.6.0-devel-ubuntu20.04
-    - 11.6.0-cudnn8-devel-ubuntu20.04
-    - 11.6.0-cudnn8-devel-ubuntu18.04
-    - 10.2-cudnn8-devel-ubuntu18.04
-    - 10.2-cudnn7-devel-ubuntu18.04
-    - 9.2-cudnn7-devel-ubuntu18.04
+    - 12.6.2-devel-ubuntu24.04
+    - 12.6.2-devel-ubuntu22.04
 
 yum:
-  centos:
-    - 7
   rockylinux:
     - 8
+    - 9
   almalinux:
     - 8
+    - 9
 
 alpine:
   alpine:
