@@ -35,17 +35,15 @@ jobs:
           - release: ubuntu
             tag: latest
           - release: ubuntu
-            tag: 20.04
+            tag: 24.04
           - release: ubuntu
-            tag: 18.04
+            tag: 22.04
           - release: debian
             tag: latest
           - release: debian
+            tag: 12
+          - release: debian
             tag: 11
-          - release: debian
-            tag: 10
-          - release: debian
-            tag: 9
           - release: rockylinux
             tag: 9
           - release: rockylinux
