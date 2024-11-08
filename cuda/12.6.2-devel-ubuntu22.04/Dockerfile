@@ -16,7 +16,6 @@ exec /usr/sbin/sshd -D\n' \
 > /entry-point.sh && \
     set -ex && \
     chmod +x /entry-point.sh && \
-    mv /etc/apt/sources.list.d/cuda.list /etc/apt/sources.list.d/cuda.list.bak && \
     apt-get update && \
     apt-get install -y sudo vim openssh-server openssh-client wget python3 python3-pip htop tmux libglib2.0-0 libsm6 libxext6 libxrender-dev && \
     python3 -m pip install --upgrade pip && \
