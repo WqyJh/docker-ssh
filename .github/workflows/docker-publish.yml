@@ -7,11 +7,11 @@ name: Docker
 
 on:
   schedule:
-    - cron: '42 3 * * 0'
+    - cron: "42 3 * * 0"
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 env:
   DOCKER_HUB_USER: wqyjh
@@ -32,12 +32,6 @@ jobs:
         include:
           - release: alpine
             tag: latest
-          - release: rockylinux
-            tag: 8
-          - release: almalinux
-            tag: 8
-          - release: centos
-            tag: 7
           - release: ubuntu
             tag: latest
           - release: ubuntu
@@ -52,14 +46,19 @@ jobs:
             tag: 10
           - release: debian
             tag: 9
-        release: [ cuda ]
-        tag: 
-          - 11.6.0-devel-ubuntu20.04
-          - 11.6.0-cudnn8-devel-ubuntu20.04
-          - 11.6.0-cudnn8-devel-ubuntu18.04
-          - 10.2-cudnn8-devel-ubuntu18.04
-          - 10.2-cudnn7-devel-ubuntu18.04
-          - 9.2-cudnn7-devel-ubuntu18.04
+          - release: rockylinux
+            tag: 9
+          - release: rockylinux
+            tag: 8
+          - release: almalinux
+            tag: 9
+          - release: almalinux
+            tag: 8
+
+        release: [cuda]
+        tag:
+          - 12.6.2-devel-ubuntu24.04
+          - 12.6.2-devel-ubuntu22.04
 
     steps:
       - name: Checkout repository
@@ -71,8 +70,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@1e95c1de343b5b0c23352d6417ee3e48d5bcd422
         with:
-          cosign-release: 'v1.4.0'
-
+          cosign-release: "v1.4.0"
 
       # Workaround: https://github.com/docker/build-push-action/issues/461
       - name: Setup Docker buildx
@@ -94,7 +92,7 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.IMAGE_NAME }}
-      
+
       - name: Set IMAGE_TAG
         if: matrix.tag != 'latest'
         id: set_image_tag
